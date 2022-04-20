@@ -1,53 +1,19 @@
-![](assets/images/posts/goodreads.png)
+This Goodreads Quote Scraper is originally by @soniajoseph. Updated in 2022 by Eric Rosenberg @NarrowBridgeMedia.
 
-Looking for material to run semantic searches on, I was surprised that I could not find a database of Goodreads quotes online. Kaggle has datasets for the [other kinds of Goodreads data](https://www.kaggle.com/jealousleopard/goodreadsbooks), but no quotes. The Goodreads API does not allow for quote scraping either.
+This Python quote scraper gets the quote text, title, and author. If you enter the author name, the scraper will find and save the quotes to a database in the same directory.
 
-This Python quote scraper gets the quote text, title, author, tags, and number of likes. If you enter the author name, with number of pages of quotes as an optional argument, the scraper will both print the results in the Terminal and return them as a list. If you don't specify a page number, the scraper will get quotes from all the pages available on Goodreads.
+The updated version in 2022 was optimized for and tested on Raspberry Pi, though it should work anywhere Python3, SQLite3, and BeautifulSoup are present.
 
-The command is:
-```python
->>> quotes_by_author(author, page_num=None):
-```
+#Dependencies
+-Python
+-SQLite3
+-BeautifulSoup 4
 
-An example...
-```python
->>> quotes_by_author("jk rowling")
-looking through 6244 pages
-scraping page 1
-scraping page 2
-...
+#Use Instructions
+1. Install Dependencies.
+2. Save scraper.py in a directory.
+3. Run scraper.py.
+4. Enter author's name when prompted.
+5. Results are saved in quotes.db.
 
-...
-
-```
-
-Snippet of results...
-```python
-scraping page 1
-“If you want to know what a man's like, take a good look at how he treats his inferiors, not his equals.”  
-  ―
-J.K. Rowling
-Harry Potter and the Goblet of Fire
-None
-95138
-
-“It is our choices, Harry, that show what we truly are, far more than our abilities.”
-J.K. Rowling
-Harry Potter and the Chamber of Secrets
-['choices']
-49192
-
-“It does not do to dwell on dreams and forget to live.”
-J.K. Rowling
-Harry Potter and the Sorcerer's Stone
-['life']
-47176
-
-“I solemnly swear that I am up to no good.”
-J.K. Rowling
-Harry Potter and the Prisoner of Azkaban
-[]
-37420
-```
-
-I fed a list of all the authors on Goodreads into the scraper to build a database of quotes, which I will release on Kaggle soon.
+Please only use this tool for good and legal purposes. If you make any improvements, please share them to pass on the love!
